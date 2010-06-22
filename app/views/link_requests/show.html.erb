@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%=h @link_request.user_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @link_request.email %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%=h @link_request.person_id %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%=h @link_request.token %>
+</p>
+
+
+<%= link_to 'Edit', edit_link_request_path(@link_request) %> |
+<%= link_to 'Back', link_requests_path %>

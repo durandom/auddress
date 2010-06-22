@@ -1,0 +1,33 @@
+Resolving Conflict in <%= @conflict.sync_source.class %><br>
+
+<div class="subcolumns">
+  <div class="c50l">
+
+    <div class="subcr conflict audress">
+      <p>Audress
+        <%= link_to 'Use this', :action => :resolve, :id => @conflict.id,
+          :resolve => 'local' %>
+      </p>
+      <%=
+      @person = @conflict.person;
+      render :partial => 'people/person', :locals => {:hide_controls => true} %>
+    </div>
+  </div>
+
+  <div class="c50r">
+    <div class="subcr conflict syncsource">
+      <p>SyncSource
+        <%= link_to 'Use this', :action => :resolve, :id => @conflict.id, 
+          :resolve => 'remote' %>
+      </p>
+      <%=
+      @person = @conflict.person_remote;
+      render :partial => 'people/person', :locals => {:hide_controls => true} %>
+    </div>
+  </div>
+</div>
+
+<center>
+<%= link_to 'Merge', :action => :resolve, :id => @conflict.id,
+          :resolve => 'merge' %>
+</center>

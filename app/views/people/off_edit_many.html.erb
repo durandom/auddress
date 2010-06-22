@@ -1,0 +1,21 @@
+<div id="errors"></div>
+
+<% remote_form_for (:person, @person, :url => {:action => 'merge'} ,
+  :html => { :class => 'contact'}, :before => "RemoveClues(this);") do |f| %>
+
+<%= render(:partial => 'form_many', :object => f)  %>
+
+<% @people_ids.each do |id| %>
+  <input type=hidden name=people[] value="<%= id %>">
+<% end %>
+
+<%= f.submit _('merge') %>
+<%= link_to_remote ('cancel'),
+    :url => { :action => 'show_many' },
+    :method => :get,
+    :submit => 'people_form',
+    :update => { :success => "right_content", :failure => "error" },
+    :html => {:class => 'cancel'}
+%>
+
+<% end #remote_form%>

@@ -1,0 +1,20 @@
+<div class="address">
+  <%= remove_child_link address %>
+  <span class='type'>
+    <%= address.select(:location, address.object.locations) %>
+  </span>
+  <span class='value'>
+    <span class='street-address'>
+      <%= address.text_field :street, :class => 'clue', :title => _('Street') %>
+    </span>
+    <span class='postal-code'>
+      <%= address.text_field :zip, :size => 7, :class => 'clue', :title => _('Zip') %>
+    </span>
+    <span class='locality'>
+      <%= address.text_field :city, :size => 18, :class => 'clue', :title => _('City')%>
+    </span>
+    <span class='country-name'>
+      <%= address.text_field :country, :size => 27, :class => 'clue', :title => _('Country') %>
+    </span>
+  </span>
+</div>

@@ -1,0 +1,236 @@
+/* @override 
+	http://localhost:3000/stylesheets/screen/audress.css
+	screen/audress.css
+	--
+	screen/audress.css
+	--
+*/
+
+@charset "UTF-8";
+/* @media screen, projection, all
+{ */	
+
+    .right {
+	    float: right;
+    }
+    
+    #people {
+        overflow: scroll;
+	    height: 400px;
+    }
+    
+    #person {
+    }
+    
+    #people .person {
+        display: block;
+    }
+    
+    .person_detail {
+        width:  100%;
+    }
+        
+    #flash_notice {
+        color: black;
+        display: block;
+        margin: 4px;
+        text-align: center;
+    }
+    
+    .fieldWithErrors{
+        background-color:#FF0000;
+        background-attachment:scroll;
+        margin:0px 0px 0px 0px ;
+        padding:2px 2px 2px 2px;
+        display : table;        
+    }
+    
+    #errorExplanation{
+        height:auto;
+        width:400px;
+        background-color:#F0F0F0;
+        background-attachment:scroll;
+        margin:0px 0px 20px 0px ;
+        border-top:2px #FF0000 solid;
+        border-bottom:2px #FF0000 solid;
+        border-left:2px #FF0000 solid;
+        border-right:2px #FF0000 solid;
+        padding:0px 0px 0px 0px;
+        
+    }
+    
+    #errorExplanation h2{
+        background-color:#CC0000;
+        background-attachment:scroll;
+        margin:-7px 0px 0px 0px ;
+        padding:5px 5px 5px 15px;
+        font-weight:bold;
+        color:#FFFFFF;
+        font-size:12px;
+        text-align:left;
+        
+    }
+    
+    #errorExplanation p{
+        background-attachment:scroll;
+        margin:0px 0px 0px 0px ;
+        padding:5px 5px 5px 5px;
+        color:#333333;
+        
+    }
+    
+    #errorExplanation ul li{
+        background-attachment:scroll;
+        font-size:12px;
+        list-style : square;
+        
+    }
+    
+    div.uploadStatus{
+        background-attachment:scroll;
+        margin:5px 0px 0px 0px ;
+        
+    }
+    
+    div.progressBar{
+        background-attachment:scroll;
+        margin:5px 0px 0px 0px ;
+        
+    }
+    
+    div.progressBar div.border{
+        height:auto;
+        width:100%;
+        background-color:#FFFFFF;
+        background-attachment:scroll;
+        border-top:1px #808080 solid;
+        border-bottom:1px #808080 solid;
+        border-left:1px #808080 solid;
+        border-right:1px #808080 solid;
+        
+    }
+    
+    div.progressBar div.background{
+        height:18px;
+        width:0%;
+        background-color:#333333;
+        background-attachment:scroll;
+        
+    }
+
+    .duplicate_group > .marked {
+        background-color: #8aacf3;
+    }
+    
+    .add_contact {
+	    background: transparent url(/images/vcard_add.png) no-repeat scroll;
+        padding-left: 19px;
+        padding-right: 15px;
+    }
+
+    .edit_contact {
+	    background: transparent url(/images/vcard_edit.png) no-repeat scroll;
+        padding-left: 19px;
+        padding-right: 15px;
+}
+
+    .remove_contact {
+	    background: transparent url(/images/vcard_remove.png) no-repeat scroll;
+        padding-left: 19px;
+        padding-right: 15px;
+    }
+
+    .link_contact {
+	    background: transparent url(/images/link.png) no-repeat scroll;
+        padding-left: 19px;
+        padding-right: 15px;
+    }
+
+    .merge_contact {
+	    background: transparent url(/images/lightning_go.png) no-repeat scroll;
+        padding-left: 19px;
+        padding-right: 15px;
+    }
+    
+    .fieldset_container .add {
+	    background: transparent url(/images/button_add.png) no-repeat scroll;
+        padding-left: 19px;
+    }
+    
+    .fieldset_container .remove {
+	    background: transparent url(/images/button_remove.png) no-repeat scroll;
+        padding-left: 19px;
+    }
+
+    form.contact .address input {
+	   display: block;
+    }
+
+    form.contact .clued {
+  	  color: #aaa;
+    }
+    
+    form.contact .cancel {
+	  margin-left: 20px;
+    }
+    
+    .vcard .linked {
+      background-color: #8ecd39;
+    }
+
+    .user {
+	  background: transparent url(/images/user.png) no-repeat scroll;
+      padding-left: 19px;
+      padding-right: 15px;
+    }
+    
+    .conflict {
+    }
+    
+    .conflict .audress {
+	  background-color: #4cff3a;
+    }
+
+    .conflict .syncsource {
+	  background-color: #fcda26;
+    }
+    
+    .filter_selected {
+	  background-color: #8aacf3;
+    }
+    
+    .tel {
+	  display: block;
+    }
+    
+    #uploadbox {
+	  position: absolute;
+	  top: 200px;
+	  background-color: #e8e8e8;
+	  border-style: solid;
+	  border-width: 1px;
+		z-index: 1;
+		margin: 12px;
+		padding: 17px;
+}
+    
+    .photo {
+	  float: right;
+ 	}
+
+	.vcard {
+		padding:.5em;
+		border:1px solid black;
+		margin-right:2em;
+		font-size:90% 
+		font-family: "Lucida Grande", 
+			Verdana, Helvetica, Arial, sans-serif;
+		width: 28em;
+	}
+
+	.vcard#fn {
+		font-size: 110%;
+	}
+
+
+/* } */

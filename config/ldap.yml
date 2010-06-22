@@ -1,0 +1,23 @@
+development:
+  host: localhost
+  port: 389
+#  method: :tls
+  base: ou=development,dc=b4mad-service,dc=net
+  bind_dn: cn=admin,dc=b4mad-service,dc=net
+  password: ****
+
+test:
+  host: localhost
+  port: 389
+#  method: :tls
+  base: ou=test,dc=b4mad-service,dc=net
+  bind_dn: cn=admin,dc=b4mad-service,dc=net
+  password: ****
+
+production:
+  host: urandom.de
+  port: 389
+  #method: :tls
+  base: dc=b4mad-service,dc=net
+  bind_dn: cn=admin,dc=b4mad-service,dc=net
+  password: ****

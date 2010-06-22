@@ -1,0 +1,5 @@
+Huhu, invitation from <%= @invitation.user.person.display_name %>
+
+Bitte click hier um mitzumachen:
+
+<%= signup_url({:token => @invitation.token}) %>

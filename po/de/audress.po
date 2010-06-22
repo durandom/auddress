@@ -1,0 +1,314 @@
+# German translations for Audress
+# German messages for Audress.
+# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as Audress.
+# Christoph Görn <goern@b4mad.net>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Audress 0.0\n"
+"POT-Creation-Date: 2008-12-28 22:56+0100\n"
+"PO-Revision-Date: 2008-08-08 08:45+0200\n"
+"Last-Translator: Christoph Görn <goern@b4mad.net>\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/views/dashboard/index.html.erb:1
+msgid "Welcome"
+msgstr "Hier wir geh'n..."
+
+#: app/views/dashboard/index.html.erb:7 app/views/users/show.html.erb:58
+msgid "You have a link request from "
+msgstr "Sie haben eine Verbindungsanfrage von "
+
+#: app/views/dashboard/index.html.erb:8 app/views/users/show.html.erb:63
+msgid "accept"
+msgstr "annehmen"
+
+#: app/views/dashboard/index.html.erb:12 app/views/users/show.html.erb:67
+msgid "reject"
+msgstr "ablehnen"
+
+#: app/views/imports/index.html.erb:1
+msgid "new vcard import"
+msgstr "neuer VCard Import"
+
+#: app/views/imports/show.html.erb:2
+msgid "These might be duplicates"
+msgstr "Diese Einträge könnten Dubletten sein"
+
+#: app/views/imports/vcard.html.erb:1
+msgid "new import"
+msgstr "neuer VCard Import"
+
+#: app/views/imports/vcard.html.erb:11
+msgid "upload"
+msgstr "hochladen"
+
+#: app/views/layouts/application.html.erb:29
+#: app/views/layouts/application.html.erb:84
+msgid "legal statement"
+msgstr "Impressum"
+
+#: app/views/layouts/application.html.erb:29
+msgid "signup"
+msgstr "Konto eröffnen"
+
+#: app/views/layouts/application.html.erb:29
+#: app/views/sessions/new.html.erb:16
+msgid "log in"
+msgstr "anmelden"
+
+#: app/views/layouts/application.html.erb:31
+msgid "You are signed in as"
+msgstr "Sie sind angemeldet als"
+
+#: app/views/layouts/application.html.erb:32
+msgid "logout"
+msgstr "abmelden"
+
+#: app/views/layouts/application.html.erb:43
+msgid "audressbook"
+msgstr "mein Audressbuch"
+
+#: app/views/layouts/application.html.erb:44
+msgid "profile"
+msgstr "mein Profil"
+
+#: app/views/layouts/application.html.erb:47
+msgid "import"
+msgstr "Import"
+
+#: app/views/link_requests/_accepted.html.erb:1
+msgid "You are now linked to"
+msgstr "Sie wurden gelinkt mit"
+
+#: app/views/link_requests/_created.html.erb:1
+msgid "link requested"
+msgstr "Link angefragt"
+
+#: app/views/link_requests/_rejected.html.erb:1
+msgid "You have rejected %s's link request."
+msgstr "Sie haben eine Verbindungsanfrage von %s abgelehnt "
+
+#: app/views/people/_address.html.erb:4
+msgid "Street"
+msgstr "Straße"
+
+#: app/views/people/_address.html.erb:5
+msgid "Zip"
+msgstr "PLZ"
+
+#: app/views/people/_address.html.erb:6
+msgid "City"
+msgstr "Stadt"
+
+#: app/views/people/_address.html.erb:7
+msgid "Country"
+msgstr "Land"
+
+#: app/views/people/_controls.html.erb:5
+msgid "edit"
+msgstr "ändern"
+
+#: app/views/people/_controls.html.erb:15
+msgid "delete"
+msgstr "löschen"
+
+#: app/views/people/_controls.html.erb:17
+#: app/views/people/_person_many.html.erb:23
+msgid "Are you sure?"
+msgstr "Sind Sie sicher?"
+
+#: app/views/people/_controls.html.erb:23
+msgid "This is you!"
+msgstr "Das sind Sie!"
+
+#: app/views/people/_email.html.erb:4
+msgid "Email"
+msgstr "E-Mail"
+
+#: app/views/people/_form.html.erb:8 app/views/people/_form_many.html.erb:12
+msgid "Firstname"
+msgstr "Vorname"
+
+#: app/views/people/_form.html.erb:9 app/views/people/_form_many.html.erb:13
+msgid "Lastname"
+msgstr "Nachname"
+
+#: app/views/people/_form.html.erb:13 app/views/people/_form.html.erb:14
+#: app/views/people/_form_many.html.erb:23
+#: app/views/people/_form_many.html.erb:24
+msgid "Organization"
+msgstr "Organisation"
+
+#: app/views/people/_form.html.erb:17 app/views/people/_form.html.erb:18
+#: app/views/people/_form_many.html.erb:33
+#: app/views/people/_form_many.html.erb:34
+msgid "Title"
+msgstr "Titel"
+
+#: app/views/people/_form.html.erb:21 app/views/people/_form.html.erb:22
+#: app/views/people/_form_many.html.erb:38
+#: app/views/people/_form_many.html.erb:39
+msgid "URL"
+msgstr ""
+
+#: app/views/people/_form.html.erb:25 app/views/people/_form.html.erb:26
+#: app/views/people/_form_many.html.erb:43
+#: app/views/people/_form_many.html.erb:44
+msgid "Nickname"
+msgstr ""
+
+#: app/views/people/_form.html.erb:29 app/views/people/_form.html.erb:30
+#: app/views/people/_form_many.html.erb:48
+#: app/views/people/_form_many.html.erb:49
+msgid "Birthday"
+msgstr "Geburtstag"
+
+#: app/views/people/_form.html.erb:37 app/views/people/_form_many.html.erb:60
+msgid "Phones"
+msgstr "Telefon"
+
+#: app/views/people/_form.html.erb:40 app/views/people/_form_many.html.erb:68
+msgid "add a phone"
+msgstr "Telefon hinzufügen"
+
+#: app/views/people/_form.html.erb:46 app/views/people/_form_many.html.erb:74
+msgid "Addresses"
+msgstr "Adressen"
+
+#: app/views/people/_form.html.erb:49 app/views/people/_form_many.html.erb:82
+msgid "add an address"
+msgstr "Adresse hinzufügen"
+
+#: app/views/people/_form.html.erb:55 app/views/people/_form_many.html.erb:88
+msgid "Emails"
+msgstr "E-Mail"
+
+#: app/views/people/_form.html.erb:58 app/views/people/_form_many.html.erb:96
+msgid "add an email"
+msgstr "E-Mail hinzufügen"
+
+#: app/views/people/_form.html.erb:62 app/views/users/_form.html.erb:12
+#: app/views/users/edit.erb:6
+msgid "save"
+msgstr "speichern"
+
+#: app/views/people/_form_many.html.erb:14
+#: app/views/people/_form_many.html.erb:25
+#: app/views/people/_form_many.html.erb:35
+#: app/views/people/_form_many.html.erb:40
+#: app/views/people/_form_many.html.erb:45
+#: app/views/people/_form_many.html.erb:50
+msgid "remove"
+msgstr "entfernen"
+
+#: app/views/people/_form_many.html.erb:108
+msgid "merge"
+msgstr "zusammenfügen"
+
+#: app/views/people/_person.html.erb:12
+#: app/views/people/_person_linked.html.erb:12
+msgid "date of birth: "
+msgstr "Geburtstag: "
+
+#: app/views/people/_phone.html.erb:5
+msgid "Number"
+msgstr "Nummer"
+
+#: app/views/people/index.html.erb:5
+msgid "You have one contact"
+msgid_plural "You have %s contacts"
+msgstr[0] "Sie haben einen Kontakt"
+msgstr[1] "Sie haben %s Kontakte"
+
+#: app/views/people/index.html.erb:11
+msgid "add"
+msgstr "hinzufügen"
+
+#: app/views/sessions/new.html.erb:4 app/views/users/new.html.erb:8
+#: app/views/users/show.html.erb:1
+msgid "login"
+msgstr "Nutzername"
+
+#: app/views/sessions/new.html.erb:7 app/views/users/_form.html.erb:4
+#: app/views/users/edit.erb:3 app/views/users/new.html.erb:12
+msgid "password"
+msgstr "Passwort"
+
+#: app/views/users/_form.html.erb:7 app/views/users/edit.erb:4
+#: app/views/users/new.html.erb:15
+msgid "confirm password"
+msgstr "Passwortbestätigung"
+
+#: app/views/users/new.html.erb:2
+msgid "You have been invited by"
+msgstr "Sie wurden eingeladen von"
+
+#: app/views/users/new.html.erb:19
+msgid "TOC accepted"
+msgstr "AGB annehmen"
+
+#: app/views/users/new.html.erb:20
+msgid ""
+"Hereby I confirm, that I read, understood and accepted the Terms of "
+"Services, Copyright Notice and the Privacy Policy."
+msgstr ""
+"Hiermit bestätige ich, dass ich die AGB, die Datenschutzerklärung und den "
+"Urheberrechtshinweis gelesen, verstanden und akzeptiert habe."
+
+#: app/views/users/new.html.erb:24
+msgid "join now"
+msgstr "jetzt eröffnen"
+
+#: app/views/users/show.html.erb:6
+msgid "change password"
+msgstr "Passwort ändern"
+
+#: app/views/users/show.html.erb:14
+msgid "change personal data"
+msgstr "persönliche Daten ändern"
+
+#: app/controllers/imports_controller.rb:39
+#, fuzzy
+msgid "%s contacts have been imported "
+msgstr "%s Kontakte wurde gefunden"
+
+#: app/controllers/link_requests_controller.rb:16
+msgid "LinkRequest was successfully created."
+msgstr "Link Anfrage erfolgreich erstellt."
+
+#: app/controllers/people_controller.rb:292
+msgid "You cannot delte yourself"
+msgstr ""
+
+#: app/controllers/sessions_controller.rb:25
+msgid "You have been successfully logged in."
+msgstr "Sie wurden erfolgreich angemeldet."
+
+#: app/controllers/sessions_controller.rb:27
+msgid ""
+"This combination of login and password is unknown to the system<br/>Try "
+"again..."
+msgstr ""
+"Diese Kombination von Nutzername und Passwort ist dem System nicht bekannt."
+"<br/>"
+
+#: app/controllers/sessions_controller.rb:37
+msgid "You have been logged out."
+msgstr "Sie wurden abgemeldet."
+
+#: app/controllers/users_controller.rb:37
+msgid "Thanks for joining!"
+msgstr "Danke für Ihre Anmeldung."
+
+#: app/controllers/users_controller.rb:112
+msgid "User was successfully updated."
+msgstr "Konto erfolgreich aktualisiert"
+
+#~ msgid "cancel"
+#~ msgstr "abbrechen"

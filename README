@@ -1,0 +1,41 @@
+== Welcome to Audress
+
+Die heutige Computerinfrastruktur besteht oft aus Anwendungen die auf einem (lokalen) Rechner des Benutzers verfügbar sind, hinzu kommen Anwendungen in Form von Web-Diensten. In beiden Klassen von Anwendungen gibt es EMail-Anwendungen, Adressbücher oder sog. Soziale Netze. Zusätzlich pflegt der Anwender oft noch sein privates Telefonbuch (im Telefon selbst) oder hat einen Stapel Visitenkarten die gar nicht digital Verfügbar sind. Alle diese "Quellen" enthalten eine Menge von Kontaktinformationen; in den meisten Fällen nicht vollständig aktualisiert oder unabgeglichen, fast immer aber über diverse Quellen verteilt.
+
+genau ein Online-Adressbuch
+
+durch mich verwaltet, durch meine Kontakte gepflegt, durch Audress ständig verfügbar gemacht wiki:Datenverfügbarkeit?
+
+Eine Synchronisations-Zentrale
+
+Datensicherheit
+
+Im Sinne von wiki:Privatsphäre?, wiki:Datensicherung?, wiki:Transportabilität? und wiki:Eigentumsrechten?
+
+Privatsphäre
+
+In welchem Rahmen sind meine Daten sichtbar (was ist der Standard, was kann ich beeinflussen)? Was passiert wenn ich mich aus dem System lösche? Kann ein anderer Benutzer Daten über mich anlegen und ewig behalten? wiki:Datenschutzerklärung
+
+-----------
+
+see the wiki for more info, https://developers.auddress.com/trac/wiki
+
+Low Pro
+http://jlaine.net/2007/8/3/from-rails-ajax-helpers-to-low-pro-part-i
+http://moiristo.wordpress.com/2008/10/11/railsconf-2008-lessons-learned-part-1-lowpro/
+http://autonomousmachine.com/2008/8/24/on-your-best-behavior-prototype-lowpro-and-responsible-scripting
+
+
+Make ActiveRecord Id to GUID / huge numbers
+http://agilewebdevelopment.com/plugins/guid
+
+# FileUpload
+http://khamsouk.souvanlasy.com/2007/5/1/ajax-file-uploads-in-rails-using-attachment_fu-and-responds_to_parent
+http://guides.rubyonrails.org/form_helpers.html
+
+
+# To start the sync daemon
+sudo -H -u staging  /opt/ruby-enterprise/bin/ruby script/runner -e staging 'SyncDaemon.run'
+
+# Dupchecker
+script/runner -e development 'DuplicateDaemon.run'

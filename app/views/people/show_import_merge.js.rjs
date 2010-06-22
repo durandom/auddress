@@ -1,0 +1,25 @@
+# show the new person
+page[:right_content].replace_html :partial => 'person',
+  :locals  => {:person => @person, :hide_controls => true}
+
+# we come from a merge, remove these people from the list
+if defined? @delete_people_ids
+  @delete_people_ids.each do |id|
+    page.remove id
+  end
+
+  # also remove the containing group/box if all people were removed
+  page << "$$('.duplicate_group').each(function(v,i) {
+    if (v.descendants().size() == 0) {
+       v.remove()
+    }
+  });
+  "
+end
+
+if flash[:notice]
+  page['flash_notice'].replace_html flash[:notice]
+  page.visual_effect('BlindDown', 'flash_notice', :queue => 'front')
+  page.visual_effect('BlindUp', 'flash_notice', :queue => 'end', :delay => 4)
+  flash[:notice] = ''
+end

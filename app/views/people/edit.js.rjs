@@ -1,0 +1,2 @@
+page[:right_content].replace_html :partial => 'form', 
+  :locals  => {:person => @person}

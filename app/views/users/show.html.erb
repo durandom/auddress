@@ -1,0 +1,58 @@
+    <h3><%=_('login')%>: <%= @user.login  %></h3>
+
+    <%= link_to _('import'), imports_path  %>
+    <br/>
+
+    <%= link_to_remote _('change password'),
+      :url => edit_user_path,
+      :method => :get,
+      :update => { :success => "right_content", :failure => "error" }
+  %>
+
+    <% link_to_remote 'sync it baby',
+      :url => { :controller=> :sync, :action => :sync },
+      :method => :get,
+      :update => { :success => "right_content", :failure => "error" }
+    %>
+    <% link_to "Add SyncSource", :controller => :sync, :action => :add %>
+    <% link_to "Sync Info", :controller => :sync, :action => :info %>
+    <% link_to_if(@conflicts, "Resolve Sync Conflict", :controller => :sync, :action => :conflict) {} %>
+    <% link_to "Backups", :controller => :backup %>
+    <% link_to "Find Duplicates", :controller => :duplicate, :action => :find %>
+    <% link_to_if(@duplicate_count > 0, "Resolve!", :controller => :duplicate) {} %>
+
+    <% unless  @link_requests.empty? %>
+      <div>
+        <%= _('You have a link request from ') %>
+        <ul>
+          <%  @link_requests.each do |lr| %>
+            <li id="<%= dom_id(lr) %>">
+              <%= lr.user.person.display_name %>
+              <%= link_to_remote _('accept'), :url => {:controller => 'link_requests',
+                :action => 'accept',
+                :id => lr.id},
+                :update => dom_id(lr), :method => :post %>
+              <%= link_to_remote _('reject'), :url => {:controller => 'link_requests',
+                :action => 'reject',
+                :id => lr.id},
+                :update => dom_id(lr), :method => :post %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+<% content_for :right do %>
+ <div id="controls">
+
+  <%= button_to_remote 'edit', :url => edit_person_path(@person, :dont_update_list=>true),
+                 :method => :get,
+                 :update => { :success => "right_content", :failure => "error" },
+                 :html=> {:class => 'edit_contact'}
+  %>
+ </div>
+
+  <%= render :partial => 'people/person'  %>
+    
+<% end %>

@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+hild_cell:
+  location: 'cell'
+  capability: 'voice'
+  country: 
+  area: 
+  prefix: 
+  number: 017934632346
+  extension: 
+  person: hild
+
+hild_landline:
+  location: 'home'
+  capability: 'voice'
+  country: 49 
+  area: 221
+  prefix: 
+  number: 123432
+  extension: 
+  person: hild
+
+reese_cell:
+  location: 'cell'
+  capability: ''
+  number: 01734535623
+  person: reese
+
+goern_cell:
+  location: 'cell'
+  capability: 'voice'
+  number: 1435425
+  person: goern

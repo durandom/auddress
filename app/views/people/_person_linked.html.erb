@@ -1,0 +1,46 @@
+<%= render(:partial => 'controls', :locals => { :person => @person }) unless (defined? hide_controls and hide_controls) %>
+
+<div class="vcard">
+	<div class="photo" style="float: right; z-index: 5;">
+          <%= image_tag(@person.link.photo ? url_for(:action => 'photo', :id => @person.link.id) : 'head.png', :size => "50x50") %>
+	</div>
+	<p>
+	<% if @person.link.organization != @person.link.display_name %>
+	  <span class="fn"><%=h @person.link.display_name %></span>
+          <% if @person.link.nickname %>&nbsp;<span class="nick"><%= @person.link.nickname %></span><% end %><br/>
+	<% end %>
+	<span class="bday"><%= _('date of birth: ') + @person.link.birthday.to_s(:presentable_date) if not @person.link.birthday.nil? %></span><br/>
+	<span class="org"><%= @person.link.organization %></span>
+	<%= @person.link.title if @person.link.title %>
+</p>
+<% if @person.link.url %>
+<div class="url">
+	URL: <%= @person.url if @person.url %>
+</div>
+<% end%>
+<p>
+<% for phone in @person.link.phones %>
+ <%= p_phone(phone, 'linked') %>
+<% end %>
+<% for phone in @person.phones %>
+ <%= p_phone(phone) %>
+<% end %>
+</p>
+
+<p>
+<% for email in @person.link.emails %>
+  <%= p_email(email, 'linked') %>
+<% end %>
+<% for email in @person.emails %>
+  <%= p_email(email) %>
+<% end %>
+</p>
+
+<% for address in @person.link.addresses %>
+  <%= p_address(address, 'linked') %>
+<% end %>
+<% for address in @person.addresses %>
+  <%= p_address(address) %>
+<% end %>
+
+</div>

@@ -1,0 +1,6 @@
+<h1><%= _('new import') %></h1>
+
+<% form_tag({:action => :vcard}, :multipart => true) do %>
+  <%= file_field_tag 'file' %>
+  <%= submit_tag 'upload' %>
+<% end %>

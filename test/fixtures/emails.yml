@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+hild_private:
+  location: home
+  email: hild@b4mad.net
+  person: hild
+
+reese_private:
+  location: home
+  email: ina@b4mad.net
+  person: reese
+
+reese_work:
+  location: work
+  email: ina_nordlicht@web.de
+  person: reese
+
+goern_private:
+  location: home
+  email: gnu@b4mad.net
+  person: goern
+
+zosel_private:
+  location: home
+  email: gando@b4mad.net
+  person: zosel
+
+urandom_zosel_private:
+  location: home
+  email: gando@b4mad.net
+  person: urandom_zosel

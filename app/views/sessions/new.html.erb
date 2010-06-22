@@ -1,0 +1,33 @@
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'clued' %>
+<% end %>
+
+
+<div id="left" class="nobook">
+  <div id="signup">
+    Yeah. This is Auddress! I want to be part of the party.<br>
+    <%= link_to "Let's sign me up!", signup_path %>
+  </div>
+</div>
+<div id="right" class="closed">
+  <% form_tag session_path, :id => 'login', :class => 'clued' do -%>
+    <% if flash[:warning] %>
+      <div id="loginwarning" class="warning">
+        <%= flash[:warning] %>
+      </div>
+    <% end %>
+  
+
+    <label for="login">login</label>
+    <%= text_field_tag :login, nil, :title => "login", :class => 'clue' %>
+
+    <label for="password">password</label>
+    <%= password_field_tag :password, nil, :title => "password" %>
+    
+    <!-- Uncomment this if you want this functionality
+    <p><label for="remember_me">Remember me:</label>
+    <%= check_box_tag 'remember_me' %></p>
+    -->
+
+  <% end -%>
+</div>

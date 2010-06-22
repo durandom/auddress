@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Auddress <%= ": #{@title} " if @title %></title>
+    <%= stylesheet_link_tag 'layout_grids' %>
+    <%= stylesheet_link_tag 'markup' %>
+    <%= stylesheet_link_tag 'hcard' %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'lowpro' %>
+    <%= javascript_include_tag 'busy_ajax' %>
+    <%= yield :scripts %>
+  </head>
+
+  <body id="auddress" style="background: #fff url('<%= image_path('2562471952_9c0b82facc_b-50.jpg') %>') no-repeat scroll center 65px;">
+
+    <div id="page_margins">
+      <div id="header">
+        <div id="header-container">
+          <div id="logo">
+            <a href="/"><%= image_tag('audress.png') %></a>&nbsp;
+          </div>
+          <div class="topnav">
+            <!-- start: skip link navigation -->
+            <a class="skip" href="#navigation" title="skip link">Skip to the navigation</a><span class="hideme">.</span>
+            <a class="skip" href="#content" title="skip link">Skip to the content</a><span class="hideme">.</span>
+            <!-- end: skip link navigation -->
+            <% if not logged_in? %>
+              <span><a href="/legal"><%= _('legal statement') %></a> | <%= link_to _('signup'), signup_path %> | <%= link_to _('log in'), login_path %>
+            <% else %>
+              <%= _('You are signed in as') %>&nbsp;<em><%= current_user.login %></em> |
+              <%= link_to _('logout'), logout_path %></span>
+            <% end %>
+          </div>
+        </div><!-- header-container -->
+      </div><!-- header -->
+
+      <div id="page">
+        <div id="nav">
+          <div id="nav_main">
+            <ul>
+              <% if logged_in? %>
+                <li><%= link_to _('auddressbook'), root_path  %></li>
+                <li><%= link_to _('profile'), :controller => "users",
+                    :action     => "show",
+                    :id         => current_user.id  %></li>
+                <li><%= link_to _('import'), imports_path  %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <!-- end: main navigation -->
+        <!-- begin: main content area #main -->
+        <div id="main">
+
+          <!-- skiplink anchor: Content -->
+          <a id="content" name="content"></a>
+          <div class="subcolumns">
+
+              <div id="flash_notice" <% if flash[:warning] %>class="warning"<% end %>>
+                <%= flash[:warning] || flash[:notice] %>
+              </div>
+              <% if flash[:warning] or flash[:notice] %>
+                <script type="text/javascript">
+                 <%= visual_effect('BlindUp', 'flash_notice', :queue => 'end', :delay => 4) %>
+                </script>
+              <% end %>
+            <div class="aboutbox" style="display:none; z-index:1;" id="splash">
+              <div class="boxhead"><h3>This is Auddress&nbsp;&nbsp;&nbsp;&nbsp;[<%=link_to_function("X", visual_effect(:shrink, "splash"))%>]</h3></div>
+              <div class="boxbody">
+              <br/><p><em>my Addressbook</em>: decoupled from space and time. </p></div>
+            </div>
+
+            <%= yield :layout %>
+
+          </div>
+        </div>
+      </div><!-- page -->
+      <div id="footer">
+        <div class="column">
+          Copyright &copy; 2008 by Auddress. <a href="#">help</a> |
+          <a href="#">contact</a> |
+          <span><a href="/legal"><%= _('legal statement') %></a> |
+          <a href="#">blog</a>
+          <p>a #B4mad.Net production</p>
+          <p><%= render :partial => 'layouts/revision' %></p>
+        </div>
+      </div><!-- footer -->
+
+    </div><!-- page_margins -->
+    <%= debug session %>
+
+  </body>
+</html>

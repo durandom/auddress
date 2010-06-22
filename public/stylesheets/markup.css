@@ -1,0 +1,199 @@
+/* @override http://localhost:3000/stylesheets/markup.css */
+
+html, body, form, fieldset {
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre,
+blockquote, ul, ol, dl, address {
+  margin: 1em 0;
+  padding: 0;
+}
+
+li, dd, blockquote {
+  margin-left: 1em;
+}
+
+form label {
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+}
+
+input, select, textarea {
+  font-size: 1em;
+  font-family: inherit;
+}
+
+span#form-button-cancel {
+	border: 1px solid #ccc;
+	color: red;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+
+body { 
+  line-height: 1.4em;
+  background: #fff;
+}
+
+a img {
+  border: none;
+}
+
+a { 
+  outline: none; 
+}
+
+a:link {
+  color: #0063dc;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #001087;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  border-bottom: 2px dotted #aaa;
+  width: 100%;
+}
+
+#header-container {
+  width: 840px;
+  padding-top: 5px;
+  margin: auto;
+}
+
+#logo {
+  float: left;
+  margin-bottom: 15px;
+}
+
+.user-menu {
+}
+
+.search form {
+  margin: 1px; 
+  padding: 0px;
+}
+
+.search input {
+  border: 1px dotted #aaa;
+  padding: 1px;
+}
+
+.search input.submit {
+  border: none;
+  background: none;
+  padding: 1px;
+  color: #1174ed;
+  font-weight: bold;
+}
+
+#page {
+  clear: both;
+  width: 840px;
+  margin: auto;
+  margin-top: 0px;
+}
+
+#container {
+}
+
+#nav .level-0, h3 {
+  margin: 0px;
+  margin-bottom: 5px;
+  color: #9b998a;
+  font-weight: bold;
+}
+
+#nav .level-1 {
+	float: left;
+	width: 25%;
+}
+
+#nav .level-2 {
+	display: inline;
+	list-style-type: none;
+}
+.aboutbox {
+	margin: 0 auto;
+	width: 17em;
+	background: url(/images/sbbody-r.gif) no-repeat bottom right;
+	font-size: 100%;
+}
+.boxhead {
+	background: url(/images/sbhead-r.gif) no-repeat top right;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.boxhead h3 {
+	background: url(/images/sbhead-l.gif) no-repeat top left;
+	margin: 0;
+	padding: 22px 30px 5px;
+	color: white; 
+	font-weight: bold; 
+	font-size: 1.2em; 
+	line-height: 1em;
+}
+.boxbody {
+	background: url(/images/sbbody-l.gif) no-repeat bottom left;
+	margin: 0;
+	padding: 5px 30px 31px;
+}
+
+div.form-row {
+	padding-top: 5px;
+}
+
+div.form-row span.form-label {
+	font-weight: bold;
+	float: left;
+	width: 140px;
+	text-align: right;
+}
+
+div.form-row span.form-field {
+	padding-left: 5px;
+	text-align: left;
+}
+
+div.form-row span.submit {
+	margin: 5px;
+	font-weight: bold;
+	float: left;
+	width: 180px;
+	text-align: right;
+}
+input, select { border: 1px solid #ccc; }
+
+div.spacer {
+	padding-top: 8px;
+	clear: both;
+}
+
+span.fn, span.org {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+span.org {
+	font-weight: bold;
+}
+
+span.nick {
+	font-style: italic;
+}

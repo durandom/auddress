@@ -1,0 +1,9 @@
+<div class="email">
+  <%= remove_child_link email %>
+  <span class='type'>
+    <%= email.select(:location, email.object.locations) %>
+  </span>
+  <span class='value'>
+    <%= email.text_field :email, :size => 15, :title => _('Email'), :class => 'clue' %>
+  </span>
+</div>

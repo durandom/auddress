@@ -1,0 +1,3 @@
+Your vcards are <%= link_to 'here', :action=>:vcf, :id => @sync_source %><br>
+Last Sync: <%= @sync_source.last_sync  %><br>
+SyncItems: <%= @sync_source.sync_items.length %><br>

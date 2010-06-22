@@ -1,0 +1,20 @@
+<%= _('Welcome') %>&nbsp;<%= current_user.person.display_name %>
+
+<div>some statistics...</div>
+
+<%  @link_requests.each do |lr| %>
+  <span id="<%= dom_id(lr) %>">
+  <%= _('You have a link request from ') %>&nbsp;<%= lr.user.person.display_name %>
+  <%= link_to_remote _('accept'), :url => {:controller => 'link_requests',
+                                        :action => 'accept',
+                                        :id => lr.id},
+      :update => dom_id(lr), :method => :post %>
+  <%= link_to_remote _('reject'), :url => {:controller => 'link_requests',
+                                        :action => 'reject',
+                                        :id => lr.id},
+      :update => dom_id(lr), :method => :post %>
+  </span>
+<% end %>
+
+
+

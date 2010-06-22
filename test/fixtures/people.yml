@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# hild is urandoms identity
+hild:
+  firstname: Marcel
+  lastname: Hild
+  user: urandom
+
+# goern is gnus identity
+# goern is linked in urandoms book
+goern:
+  firstname: Christoph
+  lastname: Görn
+  user: gnu
+  books: urandoms_book
+
+# reese is nobodys identity
+# reese is in urandoms book
+reese:
+  firstname: Ina
+  lastname: Reese
+  user: urandom
+  books: urandoms_book
+
+# zosel is gandos identity
+# zosel is in nobodys book
+zosel:
+  firstname: Stefan
+  lastname: Zosel
+  user: gando
+
+# tester is tester identity
+# tester is in nobodys book
+tester:
+    firstname: Test
+    lastname: Test
+    user: tester
+
+# urandom_zosel is in urandoms book
+urandom_zosel:
+  # note, urandom has spelled stefan wrong!
+  firstname: Stephan
+  lastname: Zosel
+  user: urandom
+  books: urandoms_book

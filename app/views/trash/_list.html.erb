@@ -1,0 +1,9 @@
+<% for person in @people %>
+  <div class="person">
+    <%= link_to_remote person.display_name,
+      :url => { :action => :show, :id  => person.id },
+      :method => :get,
+      :update => { :success => "right_content", :failure => "error" }
+  %>
+  </div>
+<% end %>

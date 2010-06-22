@@ -1,0 +1,21 @@
+<% form_for :people, :url => {:action => ""}, :html => { :id => "people_form" } do |f| %>
+
+<%= render :partial => 'list_item', :collection => @people, :locals => {:page => @page} %>
+
+<div id='loading' style='display: none;'>
+    loading additional contacts
+    <%= image_tag('spinner.gif')%>
+</div>
+
+<div id='pagination'>
+<%= will_paginate(@people) %>
+</div>
+
+<% end %>
+
+
+<%= observe_form :people_form,
+  :url => {:controller => 'people', :action => 'show_many'},
+  :method => :get,
+  :update => { :success => "right_content", :failure => "error" }
+%>

@@ -1,0 +1,79 @@
+== Basic usage instructions
+
+Fetch users' contact lists from your web application without asking them to
+provide their passwords.
+
+First, register[http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html]
+your application's domain. Then make users follow this URL:
+
+  Contacts::Google.authentication_url('http://mysite.com/invite')
+
+They will authenticate on Google and it will send them back to the URL
+provided. Google will add a token GET parameter to the query part of the URL.
+Use that token in the next step:
+
+  gmail = Contacts::Google.new('example@gmail.com', params[:token])
+  contacts = gmail.contacts
+  contacts.select { |c| c.name }
+  #-> ['Fitzgerald', 'William Paginate', ... ]
+  
+Although this is quite nice, it won't use this library to it's fullest power.
+Instead, ask for a session token, which remains valid after subsequent requests,
+via this URL:
+
+  Contacts::Google.authentication_url('http://mysite.com/invite', :session => true)
+  
+The user will authenticate just like the previous example, but the token you get
+back can be used to acquire a session token like this:
+
+  Contacts::Google.session_token(params[:token])
+  
+This token can be used to instantiate a new Contacts::Google object which you can
+use like this:
+
+  gmail = Contacts::Google.new('example@gmail.com', my_session_token)
+  
+  # Fetch all contacts (in chunks, so this will render really ALL the contacts)
+  contacts = gmail.all_contacts
+  
+  # Set some parameters and update all contacts
+  contacts.each do |c|
+    c.name += " (appended string)"
+    c['my_custom_parameter'] = "something"
+    c.update!
+  end
+  
+  # Add a new contact
+  new_contact = gmail.new_contact(:name => 'Pieter', :email => 'email@some.host.com')
+  new_contact.create!
+  
+  # Russian roulette!
+  another_contact = gmail.all_contacts.choice # Pick a random contact
+  another_contact.delete!
+
+The contact objects take the methods +name+ and +email+ for direct access to the 
+most important fields for your contact. The Google Data API provides a 
+<tt>gd:extendedProperty</tt> tag for custom parameters. You can use this tag via
+the <tt>[]</tt> and <tt>[]=</tt> methods.
+
+The example stated above will be extremely slow if you have a lot of contacts. To
+provide easy manipulation of large sets of contacts, you can use the batch method:
+
+  gmail.batch_contacts do
+    # Create, update and delete contacts, as long as you don't execute
+    # more than one action per contact in one batch. This won't
+    # report errors, but doesn't succeed.
+  end
+
+This will result in a single POST request for every 100 operations. Because you
+cannot batch operations to both contacts and groups, the batch method <tt>batch_groups</tt>
+is provided for handling a lot of groups.
+
+Make sure you don't issue multiple operations per contact each batch! After one request
+for a contact, it needs to be reloaded.
+
+More can be read in the rdoc of this lib, although they are not complete
+
+Authors:
+* <b>Mislav Marohnić</b> (mislav.marohnic@gmail.com) (initial codebase)
+* <b>Pieter Noordhuis</b> (pcnoordhuis@gmail.com) (further development)

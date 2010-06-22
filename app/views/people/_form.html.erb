@@ -1,0 +1,121 @@
+<%= error_messages_for :person %>
+
+<div class="vcard">
+<% remote_form_for(@person,
+  #:url => { :action => :create, :format => :js},
+  :html => { :class => 'contact clued'},
+  :before => "RemoveClues(this);") do |f| %>
+
+  <input type="hidden" name="dont_update_list" value="<%= params[:dont_update_list] %>">
+  <% @people_ids.try(:each) do |id| %>
+    <input type=hidden name=people[] value="<%= id %>">
+  <% end %>
+
+
+  <%= pe_photo(@person) %>
+
+  <div class="person_detail">
+    <span class="title">
+      <%= f.text_field(:title, :class => 'clue', :title => 'Title') %>
+    </span>
+
+    <span class="fn">
+      <%= f.text_field(:firstname, :class => 'clue', :title =>'Firstname') %>
+      <%= f.text_field(:lastname,  :class => 'clue', :title =>'Lastname') %>
+    </span>
+    <span class="org">
+      <%= f.text_field(:organization, :class => 'clue', :title => 'Organization') %>
+    </span>
+
+
+    <span class="nick">
+      <%= f.text_field(:nickname, :class => 'clue', :title => 'Nickname') %>
+    </span>
+
+    <span>
+      <%= f.date_select(:birthday,
+        :title => _('Birthday'), :order => [:day, :month, :year],
+        :start_year => 1900, :use_month_numbers => true, :prompt => true)   %>
+    </span>
+
+  </div>
+
+  <div id="phones">
+      <% @person.link.phones.each do |phone| %>
+        <%= p_phone(phone) %>
+      <% end if @person.link %>
+
+      <% f.fields_for :phones do |form| %>
+        <%= render :partial => 'people/phone', :object => form %>
+      <% end %>
+
+      <%= add_child_link (f, :phones) %>
+  </div>
+
+
+  <div id="addresses">
+      <% @person.link.addresses.each do |address| %>
+        <%= p_address(address) %>
+      <% end if @person.link %>
+
+      <% f.fields_for :addresses do |form| %>
+        <%= render :partial => 'people/address', :object => form %>
+      <% end %>
+
+      <%= add_child_link (f, :addresses) %>
+  </div>
+
+  <div id="emails">
+      <% @person.link.emails.each do |email| %>
+        <%= p_email(email) %>
+      <% end if @person.link %>
+
+      <% f.fields_for :emails do |form| %>
+        <%= render :partial => 'people/email', :object => form %>
+      <% end %>
+      <%= add_child_link (f, :emails) %>
+  </div>
+
+  <div id="buttons">
+    <%= f.submit _('save') %>
+    <%= button_to_remote ('cancel'),
+    :url => @person.new_record? ? new_person_path : person_path(:id => @person.id),
+    :method => :get,
+    :update => { :success => "right_content", :failure => "error" },
+    :html => {:class => 'cancel'} %>
+  </div>
+
+<% end %>
+</div>
+
+<div id="postcard" style="display:none;">
+  <div id="postcard_errors"></div>
+  <div id="postcard_info">
+    Upload a picture!<br/>
+    Make sure its not too large.
+  </div>
+
+  <%= image_tag(photo_path(@person), :id => 'postcard_photo') %>
+  
+  <% form_for(:person, :url => { :action => :create, :format => :jpeg},
+    :html => { :multipart => true, :target => 'upload_frame' }) do |f| %>
+    <%= hidden_field_tag :id, @person.id %>
+    <%= file_field_tag 'photo' %>
+    <%= submit_tag 'upload' %>
+  <% end %>
+
+  <%= link_to_remote "",
+    :url => url_for(:action => :show, :id => @person.id || 0, :format => 'jpeg'),
+    :method => :delete,
+    :html => {
+         :id => 'postcard_remove_photo',
+         :style => "display:#{(@person.id and !@person.photo.blank?) ? '':'none'}"
+    }
+  %>
+  
+  <%= link_to_function '', "$('postcard').hide();$('postcard_errors').update('')", :id => 'postcard_close'%>
+</div>
+
+<iframe id='upload_frame' name="upload_frame"
+        style="width:1px;height:1px;border:0px" src="about:blank">
+</iframe>

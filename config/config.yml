@@ -1,0 +1,28 @@
+# see http://www.taknado.com/2007/7/25/custom-configuration-info-in-rails
+common:
+  store_ldap: false
+  path_to_data: '.'
+  mail_from_invitation: 'noreply@auddress.com'
+  mail_from_linkrequest: 'noreply@auddress.com'
+
+development:
+  google_sync_target: 'http://b4c.dyndns.org:3000/sync/google'
+  syncevolution: '/Users/hild/Sites/syncevolution-0.8.1/bin/syncevolution'
+  funambol: 'http://192.168.1.119:8080/funambol/ds'
+
+test:
+  google_sync_target: 'http://b4c.dyndns.org:3000/sync/google'
+  syncevolution: '/Users/hild/Sites/syncevolution-0.8.1/bin/syncevolution'
+  funambol: 'http://192.168.1.119:8080/funambol/ds'
+
+staging:
+  google_sync_target: 'http://staging.auddress.com/sync/google'
+  funambol: 'http://syncml.auddress.com/funambol/ds'
+  syncevolution: '/opt/syncevolution-0.8.1/bin/syncevolution --quiet'
+  path_to_data: '/srv/www-data/staging/shared'
+
+production:
+  google_sync_target: 'http://auddress.com/sync/google'
+  funambol: 'http://b4c.dyndns.org:8080/funambol/ds'
+  syncevolution: '/opt/syncevolution-0.8.1/bin/syncevolution --quiet'
+  path_to_data: '/srv/www-data/production/shared'

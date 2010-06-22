@@ -1,0 +1,49 @@
+<div id="controls">
+  
+<%=
+# FIXME: http://moiristo.wordpress.com/2008/10/11/railsconf-2008-lessons-learned-part-1-lowpro/
+#   better way to add ajax instead of link_to_remote
+if (person.user == current_user)
+  button_to_remote 'edit', :url => edit_person_path(person),
+                 :method => :get,
+                 :update => { :success => "right_content", :failure => "error" },
+                 :html=> {:class => 'edit_contact'}
+else
+  ""
+end
+%>
+
+
+<%= _('This is you!') if @person == current_user.person %>
+
+<%=
+if @person.link
+   'linked'
+elsif @person.link_request
+  if @person.link_request.rejected?
+    'link request rejected'
+  else
+    'link requested'
+  end
+elsif @person == @person.user.person
+   # this is the user itself
+   ''
+elsif @person.emails.size > 0
+  button_to_remote 'link',
+  :url => {:controller => 'link_requests', :person_id => @person.id},
+	:update => "link", :method => :post, :html=> {:class => 'link_contact'}
+else
+  'add email to link'
+end
+%>
+
+<%= if person.user == current_user && @person != @person.user.person
+  button_to(  'delete', person,
+               :confirm => _('Are you sure?'),
+               :method => :delete,
+               :class => 'remove_contact' )
+   end
+%>
+
+
+</div>

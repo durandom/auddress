@@ -1,0 +1,19 @@
+<%= link_to 'add google sync',
+  Contacts::Google.authentication_url(Conf.google_sync_target, :session => true) %>
+
+<%
+# Disabled
+link_to_remote 'sync google',
+  :url => { :controller=> :sync, :action => :sync_google },
+  :method => :get,
+  :update => { :success => "right_content", :failure => "error" }
+%>
+
+<br/>
+<%= link_to 'add outlook sync', :action => :outlook %>
+
+<br/>
+<%= link_to 'add phone sync', :action => :phone %>
+
+<br/>
+<%= link_to 'add funambol sync', :action => :funambol %>

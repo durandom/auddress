@@ -1,0 +1,47 @@
+dn: ou=test,dc=b4mad-service,dc=net
+objectClass: organizationalUnit
+ou: test
+
+dn: ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: organizationalUnit
+ou: users
+
+dn: cn=urandom,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: person
+cn: urandom
+sn: urandom
+userPassword:: e0NSWVBUfWZyWUxYZmdOQTRUenc=
+
+dn: ou=people,cn=urandom,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: organizationalUnit
+ou: people
+
+dn: cn=gnu,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: person
+cn: gnu
+sn: gnu
+userPassword:: e0NSWVBUfWZyWUxYZmdOQTRUenc=
+
+dn: ou=people,cn=gnu,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: organizationalUnit
+ou: people
+
+dn: cn=gando,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: person
+cn: gando
+sn: gando
+userPassword:: e0NSWVBUfWZyWUxYZmdOQTRUenc=
+
+dn: ou=people,cn=gando,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: organizationalUnit
+ou: people
+
+dn: cn=tester,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: person
+cn: tester
+sn: tester
+userPassword:: e0NSWVBUfWZyWUxYZmdOQTRUenc=
+
+dn: ou=people,cn=tester,ou=users,ou=test,dc=b4mad-service,dc=net
+objectClass: organizationalUnit
+ou: people

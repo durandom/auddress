@@ -1,0 +1,15 @@
+<%= error_messages_for :user %>
+<% form_for @user do |f| -%>
+<div class="form-row">
+	<span class="form-label"><label for="password"><%= _('password')%></label></span><span class="form-field"><%= f.password_field :password, :size => 8 %></span>
+</div>
+<div class="form-row">
+	<span class="form-label"><label for="password_confirmation"><%= _('confirm password')%></label></span><span class="form-field"><%= f.password_field :password_confirmation, :size => 8 %></p></span>
+</div>
+<div class="spacer" />
+
+<div class="row">
+	<span class="submit"><%= f.submit _('save'), :class => 'button'%></span>
+</div>
+
+<% end -%>

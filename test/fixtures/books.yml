@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+urandoms_book:
+  name: _default
+  user: urandom
+
+gnus_book:
+  name: _default
+  user: urandom

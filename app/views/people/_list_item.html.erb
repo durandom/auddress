@@ -1,0 +1,9 @@
+  <div class="person <%= 'user' if list_item == current_user.person %> page-<%= page %>" id="<%= dom_id(list_item) %>">
+    <%= check_box_tag "people[]", list_item.id %>
+    <%= link_to_remote list_item.display_name,
+      :url => person_path(:id => list_item.id),
+      :method => :get,
+      :update => { :success => "right_content", :failure => "error" }
+  %>
+  <%= link_to_unless (list_item.duplicates.empty?, ' ==> Dups', :controller => :duplicate, :id => list_item) {} %>
+  </div>

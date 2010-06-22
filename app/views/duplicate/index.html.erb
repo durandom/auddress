@@ -1,0 +1,35 @@
+<div class="subcolumns">
+<%= _('These might be duplicates') %>
+</div>
+
+<div class="c50l">
+
+  <div id="people" class="subcr">
+
+    <% form_for :people, :url => {:action => ""}, :html => { :id => "people_form" } do |f| %>
+        <span class="duplicate_group">
+          <% for duplicate in (@person.duplicates + [@person]) %>
+            <span id="<%= dom_id(duplicate) %>" class="person">
+              <%= check_box_tag "people[]", duplicate.id %>
+              <%= duplicate.display_name %>
+              <%= link_to 'no duplicate', :action => :unique, :id => @person.id, :duplicate => duplicate.id %>
+            </span>
+          <% end %>
+        </span>
+    <% end  # form_for %>
+
+  </div><!-- people -->
+</div><!-- c50l -->
+
+<div class="c50r">
+  <div id="person" class="subcr">
+    <div id="right_content">
+    </div>
+  </div>
+</div>
+
+<%= observe_form :people_form,
+  :url => {:controller => 'people', :action => 'edit_many'},
+  :method => :get,
+  :update => { :success => "right_content", :failure => "error" }
+%>

@@ -1,0 +1,38 @@
+<div class="subcolumns">
+<%= _('These might be duplicates') %>
+</div>
+
+<div class="c50l">
+
+  <div id="people" class="subcr">
+
+    <% form_for :people, :url => {:action => ""}, :html => { :id => "people_form" } do |f| %>
+
+      <% for duplicate_group in @duplicates %>
+        <span class="duplicate_group">
+          <%= duplicate_group.first.display_name %>
+          <% for person in duplicate_group %>
+            <span id="<%= dom_id(person) %>" class="person <%= person.books.first.default? ? 'book' : 'import' %> <%= 'user' if person == current_user.person %>">
+              <%= check_box_tag "people[]", person.id %>
+              <%= person.display_name %>
+            </span>
+          <% end %>
+        </span>
+      <% end %>
+    <% end  # form_for %>
+
+  </div><!-- people -->
+</div><!-- c50l -->
+
+<div class="c50r">
+  <div id="person" class="subcr">
+    <div id="right_content">
+    </div>
+  </div>
+</div>
+
+<%= observe_form :people_form,
+  :url => { :action => :edit_many },
+  :method => :get,
+  :update => { :success => "right_content", :failure => "error" }
+%>

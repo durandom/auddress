@@ -1,0 +1,7 @@
+<%= error_messages_for :user %>
+<% form_for @user do |f| -%>
+ <p><label for="password"><%= _('password') %></label><%= f.password_field :password %></p>
+ <p><label for="password_confirmation"><%= _('confirm password') %></label><%= f.password_field :password_confirmation %></p>
+
+ <p><%= submit_tag _('save') %></p>
+<% end -%>

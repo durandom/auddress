@@ -1,0 +1,116 @@
+/* @override http://localhost:3000/stylesheets/screen/basemod.css */
+
+@charset "UTF-8";
+/**
+* "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+*
+* (en) Screen layout for YAML examples
+* (de) Bildschirmlayout für YAML-Beispiele
+*
+* @copyright       Copyright 2005-2008, Dirk Jesse
+* @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+*                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+* @link            http://www.yaml.de
+* @package         yaml
+* @version         3.0.6
+* @revision        $Revision: 202 $
+* @lastmodified    $Date: 2008-10-13 14:05:32 +0200 (Mo, 13 Okt 2008) $
+*/
+
+/* comment out for CSSEdit bug
+@media screen, projection
+{
+	*/
+	/*------------------------------------------------------------------------------------------------------*/
+
+	/**
+	* (en) Formatting YAML's  basic layout elements
+	* (de) Gestaltung des YAML Basis-Layouts
+	*/
+
+	/* (en) Marginal areas & page background */
+	/* (de) Randbereiche & Seitenhintergrund */
+	body { background: #fff; padding: 10px 0; }
+
+	/* (en) Centering layout in old IE-versions */
+	/* (de) Zentrierung des Layouts in alten IE-versionen */
+	body { text-align: center; }
+	#page_margins { text-align:left; margin: 0 auto; }
+
+	/* (en) Layout: width, background, borders */
+	/* (de) Layout: Breite, Hintergrund, Rahmen */
+	#page_margins { min-width: 740px; max-width: 80em; }
+	#page{ padding: 1px; }
+
+	/* (en) Designing main layout elements */
+	/* (de) Gestaltung der Hauptelemente des Layouts */
+	#header {
+		color: #000;
+		background: url('/images/75p_bg.png');
+		padding: 5px 2em 1em 20px; 
+	}
+
+	#topnav { color: #aaa; background: transparent; }
+
+	/* (en) adjustment of main navigation */
+	/* (de) Anpassung der Hauptnavigation */
+	#nav ul { margin-left: 20px; }
+	#nav_main { background-color: #336; }
+
+	#main { background: #fff; padding:10px; }
+
+	#footer { 
+		margin-top: 5px;
+		border-top: 2px dotted #aaa;
+		background: url('/images/75p_bg.png');
+		color: #000; 
+		text-align: left;
+		line-height: 1em;
+	}
+	#footer .column {
+		clear: both;
+		width: 840px;
+		margin: auto;
+		margin-top: 5px;
+	}
+
+	/*------------------------------------------------------------------------------------------------------*/
+
+	/**
+	* (en) Formatting content container
+	* (de) Formatierung der Inhalts-Container
+	*/
+		
+	.c50l {
+		height: auto;
+		overflow: auto;
+	}
+
+	/*------------------------------------------------------------------------------------------------------*/
+
+	/**
+	* (en) Modifying "shiny buttons" navigation
+	* (en) Anpassung der "Shiny Buttons" Navigation
+	*/
+
+	#nav * { border: 0px none !important; }
+	#nav_main { background: #efefef; }
+	#nav_main ul { margin-left: 10px; }
+	#nav_main ul li { line-height: 1.2em; }
+
+	#nav_main ul li a,
+	#nav_main ul li strong { color: #666; font-weight: normal; padding: 0.5em 0.8em 0.5em 0.8em; }
+
+	#nav_main ul li a:focus,
+	#nav_main ul li a:hover,
+	#nav_main ul li a:active  { background: #182E7A; color: #fff; }
+
+	#nav_main ul li#current { background: transparent; }
+
+	#nav_main ul li#current strong,
+	#nav_main ul li#current a,
+	#nav_main ul li#current a:focus,
+	#nav_main ul li#current a:hover,
+	#nav_main ul li#current a:active { color: #4D87C7; font-weight: bold; }
+
+	/* } */

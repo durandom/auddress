@@ -1,0 +1,30 @@
+<div class="vcard">
+
+  <div class="person_detail">
+    <%= p_photo(@person) %>
+    <%= p_title(@person) %>
+    <%= p_name(@person) %>
+    <%= p_nickname(@person) %>
+    <%= p_organization(@person) %>
+    <%= p_url(@person) %>
+    <%= p_birthday(@person) %>
+  </div>
+
+  <div id="phones">
+    <% for phone in @person.phones.with_link %>
+      <%= p_phone(phone) %>
+    <% end %>
+  </div>
+
+  <div id="emails">
+    <% for email in @person.emails.with_link %>
+      <%= p_email(email) %>
+    <% end %>
+  </div>
+
+  <div id="addresses">
+    <% for address in @person.addresses.with_link %>
+      <%= p_address(address) %>
+    <% end %>
+  </div>
+</div>

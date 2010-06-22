@@ -1,0 +1,408 @@
+/* @override http://localhost:3000/stylesheets/main.css */
+body {
+	font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
+    font-size: 75.00%; 
+    color: #444;
+	margin: 0px;
+}
+  
+a:link,
+a:visited {	
+	text-decoration: none;
+	color: #383634;
+}
+
+form input {
+	font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;	
+}
+
+
+
+root { 
+    display: block;
+}
+
+/* book and desk */
+
+#header {
+	height: 60px;
+	background-color: #a2a2a2;
+}
+
+#desk {
+	background: url("/images/schreibtisch.jpg") repeat-x;
+}
+
+#book {
+	width: 832px;
+	height: 600px;
+	margin-right: auto;
+	margin-left: 70px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#left {
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 100%;
+	background: url("/images/book_left.png") no-repeat;
+}
+
+#right {
+	position: relative;
+	float: right;
+	width: 50%;
+	height: 100%;
+	background: url("/images/book_right.png") no-repeat;
+}
+
+#left.nobook {
+    background: none;
+	width: 300px;
+}
+
+#right.closed {
+	background: url("/images/book_closed.png") no-repeat;
+	width: 448px;
+}
+
+.clued {
+	color: silver;
+}
+
+/* Login */
+
+#cover {
+	height: 100%;
+	width: 100%;
+
+}
+
+form#login {
+	position: absolute;
+	bottom: 31px;
+	left: 141px;
+	width: 268px;
+	background-color: #5d4834;
+	height: 77px;
+}
+
+form#login label {
+	color: black;
+	width: 105px;
+	float: left;	
+	text-align: right;
+	display: block;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+
+form#login input {
+	display: block;
+}
+
+#loginwarning {
+	position: absolute;
+	color: red;
+	top: -16px;
+}
+
+#signup {
+	background: url("/images/signup.png") no-repeat;
+	width: 189px;
+	height: 188px;
+	padding: 28px;
+	margin: 6px;
+}
+
+/* book index and search */
+
+#index {
+	position: absolute;
+	left: 67px;
+	top: 20px;
+}
+
+#index a:link,
+#index a:visited
+ {	
+	display: block;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#search {
+	position: absolute;
+	left: 108px;
+	top: 20px;
+}
+
+#search input {
+	width: 209px;
+}
+
+#add {
+	position: absolute;
+	float: right;
+	top: 22px;
+	right: 14px;
+}
+
+/* people list */
+#people {
+	height: 521px;
+	width: 296px;
+	overflow: auto;
+}
+
+/* book left side */
+#left_content {
+	position: absolute;
+	top: 50px;
+	left: 108px;	
+}
+
+/* book right side */
+/* person */
+#right_content {
+	position: absolute;
+	top: 20px;
+	left: 11px;
+	width: 333px;
+	height: 547px;
+}
+
+#person {
+	margin-top: 17px;
+	padding-left: 11px;
+	width: 271px;
+	height: 451px;
+	overflow: auto;
+}
+
+.vcard {
+	position: absolute;
+	top: 15px;
+	width: 344px;
+	height: 531px;
+	overflow: auto;
+}
+
+.vcard .person_detail {
+	height: 114px;
+}
+
+.vcard .person_detail span {
+	display: block;
+}
+
+.vcard .photo {
+	float: right;
+	height: 100%;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.vcard .fn {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.vcard .title {
+	display: inline;
+	font-size: 12px;
+}
+
+.vcard .nick {
+	display: inline;
+	font-size: 12px;
+}
+
+.vcard .org {
+	font-size: 15px;
+}
+
+.vcard #phones,
+.vcard #emails,
+.vcard #addresses
+ {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.vcard .tel,
+.vcard .email,
+.vcard .adr
+{
+	display: block;
+}
+
+.vcard .type {
+}
+
+.vcard .value {
+	position: absolute;
+	width: 50%;
+	right: 0px;
+}
+
+.vcard .adr {
+	margin-top: 7px;
+	margin-bottom: 16px;
+}
+.vcard .street-address {
+	display: block;
+}
+
+/* control buttons */
+
+#controls {
+	text-align: right;
+	position: relative;
+	top: -10px;
+}
+
+#controls input {
+	background-color: #fff9f8;
+	border: 1px solid #dbd8d5;
+	display: inline;
+}
+
+#controls form,
+#controls form div {
+	display: inline;
+}
+
+/* contact edit */
+
+.vcard input {
+	background-color: #fff9f8;
+	border: 1px solid #dbd8d5;
+}
+
+.vcard #person_firstname {
+	display: inline;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100px;
+}
+
+.vcard #person_lastname {
+	display: inline;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100px;
+}
+
+.vcard input {
+	width: 127px;
+}
+
+.vcard div.address {
+	height: 64px;
+}
+
+.vcard div#addresses a.plus {
+	position: relative;
+	bottom: 61px;
+	left: 15px;
+}
+
+
+.vcard span.postal-code input {
+	width: 26px;
+}
+
+.vcard span.locality input {
+	width: 93px;
+}
+
+.vcard select {
+	background-color: #fff9f8;
+	border-style: none;
+}
+
+.vcard a.minus {
+	padding-right: 17px;
+}
+
+.vcard a.plus {
+	position: relative;
+	bottom: 17px;
+	left: 15px;
+}
+
+/* Photo upload */
+#postcard {
+	position: absolute;
+	background: url("/images/postkarte.png");
+	width: 489px;
+	height: 326px;
+	left: -57px;
+	top: 50px;
+}
+
+#postcard_close {
+	position: absolute;
+	top: 7px;
+	background-image: url("/images/widget_close.png");
+	width: 28px;
+	height: 25px;
+}
+
+#postcard_info {
+	margin-top: 43px;
+	margin-left: 34px;
+	width: 200px;
+}
+
+#postcard form {
+	margin-top: 119px;
+	margin-left: 266px;
+}
+
+#postcard_remove_photo {
+	position: absolute;
+	top: 35px;
+	background-image: url("/images/widget_close.png");
+	width: 28px;
+	height: 25px;
+	left: 352px;
+}
+
+#postcard_errors {
+	position: absolute;
+    margin-top: 164px;
+	margin-left: 260px;
+	width: 156px;
+	font-weight: bold;
+	color: #fb0d18;
+}
+
+#postcard_photo {
+	position: absolute;
+	top: 46px;
+	left: 367px;
+	width: 100%;
+	max-height: 108px;
+	max-width: 93px;
+}
+
+#buttons {
+	text-align: right;
+}
+
+/* post it */
+#notes {
+	background: url("/images/post-it.png") no-repeat;
+	position: absolute;
+	top: 33px;
+	right: 36px;
+	width: 207px;
+	height: 196px;
+	padding: 32px 20px 20px;
+}
+
+

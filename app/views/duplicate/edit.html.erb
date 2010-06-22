@@ -1,0 +1,3 @@
+<%= hidden_field_tag(:no_duplicate, "false") if @duplicate %>
+<%= hidden_field_tag(:duplicate_id, @duplicate) if @duplicate %>
+<%= f.submit _('no duplicate'), :onclick => "$('no_duplicate').value = 'true'"  if @duplicate %>

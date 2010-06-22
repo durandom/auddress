@@ -1,0 +1,30 @@
+<% @sync_sources.each do |ss| %>
+
+<%=
+case ss.class.to_s
+when 'SyncSourceFunambol'
+  #render :partial => 'sync/funambol', :object => ss
+  ss.client
+  action = ss.client
+  if action == 'generic'
+    action = 'funambol'
+  end
+when 'SyncSourceVcard'
+  "VCard"
+  action = 'vcard'
+when 'SyncSourceGoogle'
+  "Google"
+  action = 'google'
+end
+%>
+|
+Last Synced <%= ss.last_sync  %>
+|
+<%= link_to "Info",  { :action => action, :id => ss} %>
+|
+<%= link_to "SyncNow",  { :action => :sync, :id => ss} %>
+|
+<%= link_to "Delete Source",  { :action => :delete, :id => ss}, :confirm => 'Really?' %>
+<hr>
+
+<% end %>

@@ -1,0 +1,37 @@
+<p class="person_detail">
+
+  <% pe_many_detail(@people, :name, form_many) %>
+  <% pe_many_detail(@people, :organization, form_many) %>
+  <% pe_many_detail(@people, :title, form_many) %>
+  <% pe_many_detail(@people, :url, form_many) %>
+  <% pe_many_detail(@people, :nickname, form_many) %>
+  <% pe_many_detail(@people, :birthday, form_many) %>
+
+</p>
+<br/>
+<br/>
+
+<div id="phones" class="fieldset_container">
+  <fieldset id="fieldset_phones">
+    <legend><%= _('Phones') %></legend>
+    <% pe_many_collection_details(@people[:phones], form_many) %>
+  </fieldset>
+</div>
+<%= add_link ('add a phone', form_many, :phones) %>
+
+
+<div id="addresses" class="fieldset_container">
+  <fieldset id="fieldset_addresses">
+    <legend><%= _('Addresses') %></legend>
+    <% pe_many_collection_details(@people[:addresses], form_many) %>
+  </fieldset>
+</div>
+<%= add_link ('add an address', form_many, :addresses) %>
+
+<div id="emails" class="fieldset_container">
+  <fieldset id="fieldset_emails">
+    <legend><%= _('Emails') %></legend>
+    <% pe_many_collection_details(@people[:emails], form_many) %>
+  </fieldset>
+</div>
+<%= add_link ('add an email', form_many, :emails) %>

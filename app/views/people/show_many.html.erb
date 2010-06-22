@@ -1,0 +1,24 @@
+<div>
+<%= @people.size %> contacts selected:
+</div>
+
+<div>
+<%= @people.collect {|p| p.display_name}.join ", "%>
+</div>
+
+<div>
+  <%= link_to_remote 'merge',
+    :url => {:controller => 'people', :action => 'new', :people => @people_ids},
+    :method => :get,
+    :html => {:class => 'merge_contact'},
+    :update => { :success => "right_content", :failure => "error" }
+%>
+
+<%= link_to 'delete',
+    { :action => 'destroy_many', :people => @people_ids},
+    
+    :method => :post,
+    :class => 'remove_contact',
+    :confirm => _('Are you sure?')
+%>
+</div>

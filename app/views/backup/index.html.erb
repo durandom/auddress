@@ -1,0 +1,8 @@
+<% @history.each do |i| %>
+
+<%= i.date %> <%= link_to "download", :action => :get,  :id => i.id  %>
+<pre> <%= i.message %></pre>
+
+<hr>
+
+<% end %>

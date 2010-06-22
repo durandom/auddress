@@ -1,0 +1,6 @@
+Huhu <%= @link_request.requested_user ? @link_request.requested_user.person.display_name : @link_request.person.display_name %>.
+Eine link Anfrage von <%= @link_request.user.person.display_name %>
+
+Bitte click hier um zu bestätigen:
+
+<%= root_url %>

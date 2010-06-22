@@ -1,0 +1,26 @@
+<h1>Listing link_requests</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Email</th>
+    <th>Person</th>
+    <th>Token</th>
+  </tr>
+
+<% for link_request in @link_requests %>
+  <tr>
+    <td><%=h link_request.user_id %></td>
+    <td><%=h link_request.email %></td>
+    <td><%=h link_request.person_id %></td>
+    <td><%=h link_request.token %></td>
+    <td><%= link_to 'Show', link_request %></td>
+    <td><%= link_to 'Edit', edit_link_request_path(link_request) %></td>
+    <td><%= link_to 'Destroy', link_request, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New link_request', new_link_request_path %>

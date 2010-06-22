@@ -1,0 +1,204 @@
+/* @override 
+	http://localhost:3000/stylesheets/default.css?1213347159
+	http://localhost:3000/stylesheets/default.css
+*/
+
+body{
+	background-color: silver;
+	background-attachment:scroll;
+	color:#333333;
+	text-align: center;
+}
+
+body, p, ol, ul, td{
+	background-attachment:scroll;
+	font-family:"Verdana","arial","helvetica",sans-serif;
+	font-size:13px;
+	line-height:18px;
+	width: 80px;
+}
+
+pre{
+	background-color:#EEEEEE;
+	background-attachment:scroll;
+	margin:0px 0px 0px 0px ;
+	padding:10px 10px 10px 10px;
+	font-size:11px;
+
+}
+
+a{
+	background-attachment:scroll;
+	color:#000000;
+
+}
+
+a:visited{
+	background-attachment:scroll;
+	color:#666666;
+
+}
+
+a:hover{
+	background-color:#000000;
+	background-attachment:scroll;
+	color:#FFFFFF;
+
+}
+
+.fieldWithErrors{
+	background-color:#FF0000;
+	background-attachment:scroll;
+	margin:0px 0px 0px 0px ;
+	padding:2px 2px 2px 2px;
+	display : table;
+
+}
+
+#errorExplanation{
+	height:auto;
+	width:400px;
+	background-color:#F0F0F0;
+	background-attachment:scroll;
+	margin:0px 0px 20px 0px ;
+	border-top:2px #FF0000 solid;
+	border-bottom:2px #FF0000 solid;
+	border-left:2px #FF0000 solid;
+	border-right:2px #FF0000 solid;
+	padding:0px 0px 0px 0px;
+
+}
+
+#errorExplanation h2{
+	background-color:#CC0000;
+	background-attachment:scroll;
+	margin:-7px 0px 0px 0px ;
+	padding:5px 5px 5px 15px;
+	font-weight:bold;
+	color:#FFFFFF;
+	font-size:12px;
+	text-align:left;
+
+}
+
+#errorExplanation p{
+	background-attachment:scroll;
+	margin:0px 0px 0px 0px ;
+	padding:5px 5px 5px 5px;
+	color:#333333;
+
+}
+
+#errorExplanation ul li{
+	background-attachment:scroll;
+	font-size:12px;
+	list-style : square;
+
+}
+
+div.uploadStatus{
+	background-attachment:scroll;
+	margin:5px 0px 0px 0px ;
+
+}
+
+div.progressBar{
+	background-attachment:scroll;
+	margin:5px 0px 0px 0px ;
+
+}
+
+div.progressBar div.border{
+	height:auto;
+	width:100%;
+	background-color:#FFFFFF;
+	background-attachment:scroll;
+	border-top:1px #808080 solid;
+	border-bottom:1px #808080 solid;
+	border-left:1px #808080 solid;
+	border-right:1px #808080 solid;
+
+}
+
+div.progressBar div.background{
+	height:18px;
+	width:0%;
+	background-color:#333333;
+	background-attachment:scroll;
+
+}
+
+#wrapper {
+	border-style: solid;
+	background-color: white;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 840px;
+	min-width: 760px;
+    text-align:left;
+	position: relative;
+}
+
+*.oi { /* outer inner stuff to get a fluid design */
+	margin: 5px; 
+	padding:5px; 
+/*	border:1px solid black; */
+    overﬂow:hidden; /* prevent things break the layout */
+}
+
+#navigation {
+	top: -25px;
+}
+
+#navigation a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 5px;
+}
+
+#navigation a:hover{
+	background-attachment:scroll;
+	color:#FFFFFF;
+}
+
+#flash_notice {
+	color: #000;
+	display: block;
+	margin: 4px;
+	text-align: center;
+}
+
+#content {
+}
+
+#footer {
+	bottom: 1%;
+	left: 5%;
+	right: 5%;
+	text-align: center;
+	clear: both;
+}
+
+#people {
+	float: left;
+	width:  50%;
+}
+
+#person {
+	float: left;
+	width:  50%;
+}
+
+#people .person {
+	display: block;
+}
+
+.person_detail {
+	width:  100%;
+}
+
+#new_person {
+	float: right;
+}
+

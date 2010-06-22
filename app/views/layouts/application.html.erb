@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Auddress <%= ": #{@title} " if @title %></title>
+    <%= stylesheet_link_tag 'main' %>
+    <% stylesheet_link_tag 'markup' %>
+    <% stylesheet_link_tag 'hcard' %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'lowpro' %>
+    <%= javascript_include_tag 'busy_ajax' %>
+    <%= javascript_include_tag 'endless' %>
+    <%= javascript_include_tag 'clued' %>
+    <%= yield :scripts %>
+  </head>
+
+  <body id="auddress">
+      <div id="header">
+        <%= image_tag('audresslogo.png') %>
+        <%= link_to 'logout', logout_path %>
+      </div><!-- header -->
+
+      <div id="desk">
+        <div id="book">
+          <div id="left">
+                <div id="index">
+                  <%= link_to "me", :controller => "users",
+                          :action     => "show",
+                          :id         => current_user.id  %>
+                  <% "ABCDEFGHIJKLMNOPQRSTUVWXYZ#".each_char do |char| %>
+                    <%= link_to char, {:controller => :people, :filter => char}, :class => params[:filter] == char ? 'filter_selected' : '' %>
+                  <% end %>
+                  <%= link_to "all", {:controller => :people} %>
+                </div>
+
+                <div id="search">
+                  <% form_tag ({:action => ''}, :class =>'clued', :method => :get) do -%>
+                    <%= text_field_tag 'query', params[:query], :class => 'clue', :title => 'Search' %>
+                  <% end -%>
+                </div>
+
+                <%= link_to_remote image_tag("/images/add.png", :border => 0, :id => 'add'),
+                     :url => new_person_path,
+                     :update => { :success => "right_content", :failure => "error" } %>
+
+            <div id="left_content">
+              <%= yield %>
+            </div>
+          </div>
+
+          <div id="right">
+            <div id="right_content">
+              <%= yield :right %>
+            </div>
+          </div>
+
+          <div id="notes">
+              <div id="flash_notice" <% if flash[:warning] %>class="warning"<% end %>>
+                <%= flash[:warning] || flash[:notice] %>
+              </div>
+              <% if flash[:warning] or flash[:notice] %>
+                <script type="text/javascript">
+                 <%= visual_effect('BlindUp', 'flash_notice', :queue => 'end', :delay => 4) %>
+                </script>
+              <% end %>
+
+              <%= yield :notes %>
+          </div>
+
+        </div>
+      </div>
+  </body>
+</html>

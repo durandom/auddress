@@ -1,0 +1,10 @@
+<div class="tel">
+  <%= remove_child_link phone %>
+  <span class='type'>
+    <%= phone.select(:location, phone.object.locations) %>
+    <%= phone.select(:capability, phone.object.capabilities) %>
+  </span>
+  <span class='value'>
+    <%= phone.text_field :number, :class => 'clue', :title => _('Number') %>
+  </span>
+</div>
